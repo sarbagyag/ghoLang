@@ -1,0 +1,10 @@
+var a = 1;
+var b = 2;
+print a + b;
+a = 10;
+print a;
+var c;
+print c;
+var beer = "french ";
+var bread = "toast";
+print beer + bread;
