@@ -1,0 +1,41 @@
+var dup = "first";
+var dup = "second";
+print dup;
+
+var total = 0;
+var threshold = 5;
+
+for (var i = 1; i <= threshold; i = i + 1) {
+  var square = i * i;
+  if (square > 10 and square < 20) {
+    print square;
+  } else if (square >= 20) {
+    total = total + square;
+  }
+}
+print total;
+
+var outer = "outer value";
+{
+  var inner = "inner value";
+  print outer + " / " + inner;
+  {
+    var outer = "shadowed";
+    print outer;
+  }
+  print outer;
+}
+print outer;
+
+var flag = true;
+var count = 0;
+while (flag and count < 4) {
+  count = count + 1;
+  if (count == 3) {
+    flag = false;
+  }
+}
+print count;
+
+print nil or "default value";
+print 0 or "zero is truthy in lox";

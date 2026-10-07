@@ -1,0 +1,17 @@
+fun add(a, b) { return a + b; }
+print add(1, 2);
+
+fun fib(n) { if (n < 2) return n; return fib(n - 2) + fib(n - 1); }
+print fib(10);
+
+fun noReturn() { print "side effect"; }
+print noReturn();
+
+fun outer() {
+  fun inner() { return "nested"; }
+  return inner();
+}
+print outer();
+
+print clock() >= 0;
+print add; print clock; print outer;
