@@ -1,0 +1,29 @@
+fun makeCounter() {
+  var count = 0;
+  fun increment() { count = count + 1; return count; }
+  return increment;
+}
+var c1 = makeCounter();
+var c2 = makeCounter();
+print c1(); print c1(); print c2();
+
+fun outer() {
+  var x = "outer local";
+  fun middle() {
+    fun inner() { return x; }
+    return inner();
+  }
+  return middle();
+}
+print outer();
+
+var globalSet; var globalGet;
+fun shared() {
+  var a = "initial";
+  fun set() { a = "updated"; }
+  fun get() { print a; }
+  globalSet = set; globalGet = get;
+}
+shared();
+globalSet();
+globalGet();
